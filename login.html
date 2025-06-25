@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tela de Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Tela de carregamento -->
+  <div class="loading-screen" id="loading">
+    <div class="spinner"></div>
+    <p>Carregando...</p>
+  </div>
+
+  <!-- Formulário de login -->
+  <div class="login-container" id="loginForm">
+    <h2>Login</h2>
+    <form id="formLogin">
+      <div class="form-group">
+        <label for="usuario">Usuário</label>
+        <input type="text" id="usuario" name="usuario" required />
+      </div>
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" required />
+      </div>
+      <button type="submit" class="login-button">Entrar</button>
+    </form>
+  </div>
+
+  <!-- Script -->
+  <script>
+    document.getElementById("formLogin").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Oculta o formulário e mostra o loading
+      document.getElementById("loginForm").style.display = "none";
+      document.getElementById("loading").style.display = "flex";
+
+      // Simula carregamento e redireciona
+      setTimeout(() => {
+        window.location.href = "Umbrella Corp.html";
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
+
+

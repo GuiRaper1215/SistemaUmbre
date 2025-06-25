@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mensageiro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Menu lateral fixo -->
+  <nav class="side-menu" id="sideMenu">
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul>
+      <li><a href="Umbrella Corp.html">Home</a></li>
+      <li><a href="dadosuser.html">Meu Cadastro</a></li>
+      <li><a href="colaboradores.html">Colaboradores</a></li>
+      <li><a href="messaging_center.html">Chamados</a></li>
+      <li><a href="banco.html">Meu Banco de Dados</a></li>
+      <li><a href="login.html" class="logout-button">Sair</a></li>
+    </ul>
+  </nav>
+
+  <!-- Barra superior -->
+  <header class="top-bar">Chat</header>
+
+  <!-- Área principal -->
+  <main class="main-content">
+    <div class="messenger-container">
+      <!-- Lista de conversas -->
+      <aside class="chat-sidebar">
+        <div class="search-box">
+          <input type="text" placeholder="Buscar..." />
+        </div>
+        <ul class="chat-list">
+          <li class="chat-item active">
+            <strong>João</strong><br />
+            <small>Última mensagem...</small>
+          </li>
+          <li class="chat-item">
+            <strong>Maria</strong><br />
+            <small>Oi, tudo bem?</small>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Área de conversa -->
+      <section class="chat-area">
+        <div class="chat-header">
+          <strong>João</strong>
+        </div>
+        <div class="chat-messages">
+          <div class="message received">Oi!</div>
+          <div class="message sent">E aí, tudo bem?</div>
+        </div>
+        <div class="chat-input">
+          <input type="text" placeholder="Digite uma mensagem..." />
+          <button>Enviar</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="scripts/menu.js"></script>
+</body>
+</html>
