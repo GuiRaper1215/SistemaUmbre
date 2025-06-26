@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Colaboradores</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Menu lateral fixo -->
+  <nav class="side-menu" id="sideMenu">
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul>
+      <li><a href="Umbrella Corp.html">Home</a></li>
+      <li><a href="dadosuser.html">Meu Cadastro</a></li>
+      <li><a href="colaboradores.html">Colaboradores</a></li>
+      <li><a href="#messaging-center">Chamados</a></li>
+      <li><a href="#meu-banco-dados">Meu Banco de Dados</a></li>
+      <li><a href="login.html" class="logout-button">Sair</a></li>
+    </ul>
+  </nav>
+
+  <!-- Barra superior -->
+  <header class="top-bar">
+    <h1>Colaboradores</h1>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <div class="main-content" id="mainContent">
+    <div class="content-container">
+
+      <!-- Setor TI -->
+      <h2 class="sector-title">Setor de TI</h2>
+      <ul class="data-list">
+        <li>
+          <strong>Guilherme Castilho</strong><br/>
+          Cargo: Líder de TI<br/>
+          E-mail: guilherme@empresa.com
+        </li>
+        <li>
+          <strong>Rafaela Toder</strong><br/>
+          Cargo: Analista de TI Jr<br/>
+          E-mail: rafaela@empresa.com
+        </li>
+        <li>
+          <strong>John Wilson</strong><br/>
+          Cargo: Analista de Redes Pl<br/>
+          E-mail: john.wilson@empresa.com
+        </li>
+        <li>
+          <strong>Prietro Santos</strong><br/>
+          Cargo: Assistente de TI<br/>
+          E-mail: prietro@empresa.com
+        </li>
+      </ul>
+
+      <!-- Setor Engenharia -->
+      <h2 class="sector-title">Engenharia</h2>
+      <ul class="data-list">
+        <li>
+          <strong>Ana Beatriz Mendes</strong><br/>
+          Cargo: Supervisora de Engenharia<br/>
+          E-mail: ana.mendes@empresa.com
+        </li>
+        <li>
+          <strong>Thiago Ramos</strong><br/>
+          Cargo: Lider de Projetos<br/>
+          E-mail: thiago.ramos@empresa.com
+        </li>
+        <li>
+          <strong>Julia Ernesto</strong><br/>
+          Cargo: Projetista Pl<br/>
+          E-mail: thiago.ramos@empresa.com
+        </li>
+        <li>
+          <strong>Mario Cesar Almeida</strong><br/>
+          Cargo: Projetista Jr<br/>
+          E-mail: thiago.ramos@empresa.com
+        </li>
+        <li>
+          <strong>Olavo Carvalho</strong><br/>
+          Cargo: Estagiario Projetos<br/>
+          E-mail: thiago.ramos@empresa.com
+        </li>
+
+      </ul>
+
+      <!-- Setor PCP -->
+      <h2 class="sector-title">PCP</h2>
+      <ul class="data-list">
+        <li>
+          <strong>Juliana Souza</strong><br/>
+          Cargo: Lider PCP<br/>
+          E-mail: juliana.souza@empresa.com
+        </li>
+        <li>
+          <strong>Marcos Oliveira</strong><br/>
+          Cargo: Analista de PCP Pl<br/>
+          E-mail: marcos.oliveira@empresa.com
+        </li>
+        <li>
+          <strong>Ana Luiza Moura</strong><br/>
+          Cargo: Analista de PCP Jr<br/>
+          E-mail: marcos.oliveira@empresa.com
+        </li>
+        <li>
+          <strong>William Marcelo</strong><br/>
+          Cargo: Analista de PCP Jr<br/>
+          E-mail: marcos.oliveira@empresa.com
+        </li>
+      </ul>
+
+      <!-- Setor Financeiro -->
+      <h2 class="sector-title">Financeiro</h2>
+      <ul class="data-list">
+        <li>
+          <strong>Caroline Hazanaki</strong><br/>
+          Cargo: Lider Financeiro<br/>
+          E-mail: camila.duarte@empresa.com
+        </li>
+        <li>
+          <strong>Roberto Nunes</strong><br/>
+          Cargo: Anlista Finaceiro Pl<br/>
+          E-mail: roberto.nunes@empresa.com
+        </li>
+        <li>
+          <strong>Igor Jose Lopes</strong><br/>
+          Cargo: Analista Finaceiro Pl<br/>
+          E-mail: roberto.nunes@empresa.com
+        </li>
+        <li>
+          <strong>Juliane Antunes Onofrio</strong><br/>
+          Cargo: Analista Finaceiro Jr<br/>
+          E-mail: roberto.nunes@empresa.com
+        </li>
+        <li>
+          <strong>Beatriz Gonçalves</strong><br/>
+          Cargo: Estagiaria Finaceiro<br/>
+          E-mail: roberto.nunes@empresa.com
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- Script para controle do menu -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const sideMenu = document.getElementById('sideMenu');
+    const topBar = document.querySelector('.top-bar');
+    const mainContent = document.querySelector('.main-content');
+
+    hamburger.addEventListener('click', () => {
+      sideMenu.classList.toggle('expanded');
+      topBar.classList.toggle('expanded');
+      mainContent.classList.toggle('expanded');
+    });
+  </script>
+</body>
+</html>
+
