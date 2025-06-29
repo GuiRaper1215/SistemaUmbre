@@ -9,25 +9,31 @@
 <body>
 
   <!-- Tela de carregamento -->
-  <div class="loading-screen" id="loading">
+  <div class="loading-screen" id="loading" style="display: none;">
     <div class="spinner"></div>
     <p>Carregando...</p>
   </div>
 
-  <!-- Formulário de login -->
+  <!-- Formulário de login com layout visual -->
   <div class="login-container" id="loginForm">
-    <h2>Login</h2>
-    <form id="formLogin">
-      <div class="form-group">
-        <label for="usuario">Usuário</label>
-        <input type="text" id="usuario" name="usuario" required />
-      </div>
-      <div class="form-group">
-        <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha" required />
-      </div>
-      <button type="submit" class="login-button">Entrar</button>
-    </form>
+    <div class="login-left">
+      <img src="#" alt="Logo" />
+      <p>Informe suas credenciais abaixo para acessar Umbrella Coprs</p>
+      <form id="formLogin">
+  <div class="form-group">
+    <input type="text" id="usuario" name="usuario" placeholder="E-mail" required />
+  </div>
+  <div class="form-group">
+    <input type="password" id="senha" name="senha" placeholder="Senha" required />
+  </div>
+  <button type="submit">Login</button>
+  <a href="#">Esqueci minha senha</a>
+</form>
+    </div>
+
+    <div class="login-right">
+      <img src="img/umbre.jpg" alt="Ilustração" />
+    </div>
   </div>
 
   <!-- Script -->
@@ -47,5 +53,6 @@
   </script>
 </body>
 </html>
+
 
 

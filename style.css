@@ -228,7 +228,7 @@ body {
     padding: 90px 10px 20px;
   }
 }
-/* ===== MENSAGEIRO (estilo tipo WhatsApp Web) ===== */
+/* MENSAGEIRO */
 
 .messenger-container {
   display: flex;
@@ -363,7 +363,7 @@ label {
   display: block;
   margin-bottom: 5px;
 }
-/* ===== LISTA DE COLABORADORES EM CARDS ===== */
+/* LISTA DE COLABORADORES EM CARDS */
 .data-list {
   display: flex;
   flex-wrap: wrap;
@@ -399,6 +399,123 @@ label {
   margin: 30px 0 10px;
   text-align: center;
 }
+/* TELA DE LOGIN */
+
+.login-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f2f2f2;
+}
+
+/* Lado esquerdo: formulário */
+.login-left {
+  flex: 1;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  max-width: 700px;
+}
+
+.login-left img {
+  width: 180px;
+  margin-bottom: 30px;
+}
+
+.login-left p {
+  color: #666;
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+  width: 100%; /* Ocupa 90% do container pai */
+  min-width: 400px; /* Largura mínima garantida */
+  max-width: none; /* Remove limitação */
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.login-left button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2c4ada;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-left button:hover {
+  background-color: #20388f;
+}
+
+.login-left a {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #2c4ada;
+  text-decoration: none;
+}
+
+.login-left a:hover {
+  text-decoration: underline;
+}
+
+/* Lado direito: imagem ou ícones */
+.login-right {
+  position: relative;
+  flex: 1;
+  background: linear-gradient(135deg, #f8f8f8, #e3e3e3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0; /* Remove o padding para ocupar todo espaço */
+  height: 100vh; /* Garante altura total */
+}
+
+.login-right img {
+  width: 100%; /* Ocupa toda largura disponível */
+  height: 100%; /* Ocupa toda altura disponível */
+  max-width: none; /* Remove limitação de largura */
+  object-fit: cover; /* Mantém proporção sem distorção */
+  object-position: center; /* Centraliza a imagem */
+}
+/*---------------------------------------------------*/
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-left, .login-right {
+    max-width: 100%;
+  }
+
+  .login-left {
+    padding: 30px 20px;
+  }
+
+  .login-right {
+    padding: 20px;
+  }
+}
+
+
+
+
+
 
 
 
