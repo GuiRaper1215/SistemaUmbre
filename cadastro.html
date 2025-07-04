@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Colaboradores - Umbrella Corps</title>
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>UMBRELLA CORPS</h1>
+            <p>Cadastro de Novos Colaboradores</p>
+        </div>
+
+         <!-- Menu lateral fixo -->
+  <nav class="side-menu" id="sideMenu">
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul>
+      <li><a href="Umbrella Corp.html">Home</a></li>
+      <li><a href="dadosuser.html">Meu Cadastro</a></li>
+      <li><a href="colaboradores.html">Colaboradores</a></li>
+      <li><a href="messaging_center.html">Chamados</a></li>
+      <li><a href="#meu-banco-dados">Meu Banco de Dados</a></li>
+      <li><a href="cadastro.html">Cadastrar novo colaborador</a></li>
+      <li><a href="login.html" class="logout-button">Sair</a></li> <!-- Botão "Sair" dentro do menu -->
+    </ul>
+  </nav>
+
+        <div class="form-container">
+            <form id="employeeForm">
+                <div class="form-grid">
+                    <!-- Dados Pessoais -->
+                    <div class="form-group">
+                        <label for="firstName">Nome *</label>
+                        <input type="text" id="firstName" name="firstName" required placeholder="Digite o nome">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Sobrenome *</label>
+                        <input type="text" id="lastName" name="lastName" required placeholder="Digite o sobrenome">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" required placeholder="exemplo@umbrella.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefone *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="(11) 99999-9999">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cpf">CPF *</label>
+                        <input type="text" id="cpf" name="cpf" required placeholder="000.000.000-00">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="birthDate">Data de Nascimento *</label>
+                        <input type="date" id="birthDate" name="birthDate" required>
+                    </div>
+
+                    <!-- Informações Profissionais -->
+                    <div class="form-group">
+                        <label for="department">Departamento *</label>
+                        <select id="department" name="department" required>
+                            <option value="">Selecione o departamento</option>
+                            <option value="research">Pesquisa & Desenvolvimento</option>
+                            <option value="security">Segurança</option>
+                            <option value="biotech">Biotecnologia</option>
+                            <option value="operations">Operações</option>
+                            <option value="admin">Administração</option>
+                            <option value="logistics">Logística</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="position">Cargo *</label>
+                        <input type="text" id="position" name="position" required placeholder="Ex: Pesquisador Sênior">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="startDate">Data de Início *</label>
+                        <input type="date" id="startDate" name="startDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="clearanceLevel">Nível de Acesso *</label>
+                        <select id="clearanceLevel" name="clearanceLevel" required>
+                            <option value="">Selecione o nível</option>
+                            <option value="1">Nível 1 - Básico</option>
+                            <option value="2">Nível 2 - Intermediário</option>
+                            <option value="3">Nível 3 - Avançado</option>
+                            <option value="4">Nível 4 - Confidencial</option>
+                            <option value="5">Nível 5 - Ultra Secreto</option>
+                        </select>
+                    </div>
+
+                    <!-- Endereço -->
+                    <div class="form-group full-width">
+                        <label for="address">Endereço Completo *</label>
+                        <input type="text" id="address" name="address" required placeholder="Rua, número, bairro, cidade, estado, CEP">
+                    </div>
+
+                    <!-- Observações -->
+                    <div class="form-group full-width">
+                        <label for="observations">Observações</label>
+                        <textarea id="observations" name="observations" placeholder="Informações adicionais sobre o colaborador..."></textarea>
+                    </div>
+
+                    <!-- Upload de Foto -->
+                    <div class="form-group full-width">
+                        <label>Foto do Colaborador</label>
+                        <div class="photo-upload">
+                            <div class="photo-preview" id="photoPreview">📷</div>
+                            <input type="file" id="photo" name="photo" accept="image/*">
+                            <label for="photo">Clique para selecionar uma foto</label>
+                        </div>
+                    </div>
+
+                    <!-- Termos -->
+                    <div class="form-group full-width">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">Concordo com os termos de confidencialidade da Umbrella Corps *</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="backgroundCheck" name="backgroundCheck" required>
+                            <label for="backgroundCheck">Autorizo verificação de antecedentes *</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary">Cadastrar Colaborador</button>
+                    <button type="button" class="btn btn-secondary" onclick="clearForm()">Limpar Formulário</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Loading -->
+    <div id="loading" class="loading">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p>Processando cadastro...</p>
+        </div>
+    </div>
+
+    <!-- Success Message -->
+    <div id="successMessage" class="success-message">
+        <h3>✅ Colaborador cadastrado com sucesso!</h3>
+        <p>Dados enviados para análise do departamento de RH.</p>
+    </div>
+
+    <script src="scripts/cad.js"></script>
+    <script src="scripts/menu.js" defer></script>
+</body>
+</html>
+
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    min-height: 100vh;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+    border-bottom: 2px solid black;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: black;
+    margin-bottom: 10px;
+    
+}
+
+.header p {
+    font-size: 1.1rem;
+    color: #cccccc;
+}
+/* Menu lateral */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100vh;
+  background-color: #222;
+  transition: width 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.side-menu.expanded {
+  width: 200px;
+}
+
+/* Botão hamburguer */
+.hamburger {
+  font-size: 28px;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  cursor: pointer;
+  background-color: #111;
+}
+
+/* Itens do menu */
+.side-menu ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+  display: none;
+}
+
+.side-menu.expanded ul {
+  display: block;
+}
+
+.side-menu ul li {
+  padding: 15px;
+  white-space: nowrap;
+}
+
+.side-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+}
+
+.side-menu ul li:hover {
+  background-color: #333;
+}
+
+.form-container {
+    background: rgba(240, 242, 243, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: blue;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-group select option {
+    background: #2d2d2d;
+    color: #fff;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+.checkbox-group label {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #cccccc;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #ff0000, #cc0000);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #cc0000, #990000);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-secondary:hover {
+    background: #fff;
+    color: #1a1a1a;
+    transform: translateY(-2px);
+}
+
+.photo-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.photo-upload:hover {
+    border-color: #ff0000;
+    background: rgba(255, 0, 0, 0.1);
+}
+
+.photo-preview {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.photo-upload input[type="file"] {
+    display: none;
+}
+
+.photo-upload label {
+    cursor: pointer;
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.loading {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-content {
+    text-align: center;
+    color: #fff;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid #ff0000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.success-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(45deg, #00ff00, #00cc00);
+    color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 10000;
+    box-shadow: 0 4px 20px rgba(0, 255, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+    
+    .form-container {
+        padding: 20px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+}
+</style>

@@ -4,11 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const topBar = document.querySelector(".top-bar");
   const mainContent = document.querySelector(".main-content");
 
-  if (hamburger && sideMenu && topBar && mainContent) {
+  if (hamburger && sideMenu) {
     hamburger.addEventListener("click", () => {
       sideMenu.classList.toggle("expanded");
-      topBar.classList.toggle("expanded");
-      mainContent.classList.toggle("expanded");
+
+      if (topBar) topBar.classList.toggle("expanded");
+      if (mainContent) mainContent.classList.toggle("expanded");
     });
   }
 });

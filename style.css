@@ -491,6 +491,23 @@ label {
   object-fit: cover; /* Mantém proporção sem distorção */
   object-position: center; /* Centraliza a imagem */
 }
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9); /* Fundo semi-transparente */
+  z-index: 9999; /* Fica por cima de tudo */
+}
+
+/*Cadastro tela*/
+
+
+
 /*---------------------------------------------------*/
 
 /* Responsivo */
